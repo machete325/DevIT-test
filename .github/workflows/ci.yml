@@ -22,6 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: server/package-lock.json
+          cache-key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('server/package-lock.json') }}
       - run: npm install
       - run: npm run lint
       - run: npm run build
