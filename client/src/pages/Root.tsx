@@ -1,4 +1,7 @@
-import React, { useCallback, useEffect } from 'react';
+import React, {
+    useCallback,
+    useEffect,
+} from 'react';
 import { Header } from '../common/components/Header';
 import { Page } from '../common/components/Page';
 import { makeStyles } from 'tss-react/mui';
@@ -7,7 +10,10 @@ import {
     Paper,
 } from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+    useDispatch,
+    useSelector,
+} from 'react-redux';
 import { appSelector } from '../store/selectors/app/appSelector';
 import { initAppAction } from '../store/actions';
 import { LoadingIndicatorBig } from '../common/components/LoadingIndicatorBig';
@@ -39,7 +45,7 @@ export const Root = () => {
             onRefresh={initRequest}
         >
             <Page>
-                <Header />
+                <Header/>
 
                 <Box
                     display='flex'
@@ -50,7 +56,7 @@ export const Root = () => {
                         elevation={0}
                         className={classes.content}
                     >
-                        <Outlet />
+                        <Outlet/>
                     </Paper>
                 </Box>
             </Page>

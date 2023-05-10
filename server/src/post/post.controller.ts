@@ -49,8 +49,8 @@ export class PostController {
             order,
             search,
             startDate: startDate && new Date(startDate),
-            endDate: endDate && new Date(endDate)
-        }
+            endDate: endDate && new Date(endDate),
+        };
 
         const result = await this.postService.getAvailablePosts(params);
 
@@ -64,7 +64,7 @@ export class PostController {
         @User() user: UserOutput,
         @Body(new ValidationPipe()) postInput: PostInput,
     ) {
-        const creator = `${user.firstName} ${user.lastName}`
+        const creator = `${user.firstName} ${user.lastName}`;
 
         return this.postService.createPost({ ...postInput, creator });
     }

@@ -1,5 +1,8 @@
 import React, { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+    useDispatch,
+    useSelector,
+} from 'react-redux';
 import { postEditorSelector } from '../../../../store/selectors/post/postEditorSelector';
 import {
     closePostEditorAction,
@@ -46,6 +49,6 @@ export const PostEditor = () => {
                 path='content'
                 fullWidth
             />
-        </BaseEditor >
+        </BaseEditor>
     );
 };

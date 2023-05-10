@@ -45,7 +45,7 @@ const useStyles = makeStyles()(({ spacing }) => ({
     },
     button: {
         width: 100,
-    }
+    },
 }));
 
 interface Props<T> extends LinkedFormProps<T> {
@@ -101,7 +101,7 @@ export const BaseEditor: <T>(props: Props<T>) => ReactElement<Props<T>> = (props
                         {children}
                     </Box>
 
-                    <Divider />
+                    <Divider/>
 
                     <Box className={classes.actions}>
                         <Button

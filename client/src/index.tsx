@@ -39,7 +39,7 @@ const muiTheme = createTheme({
         },
         caption: {
             color: '#aaa',
-        }
+        },
     },
     components: {
         MuiButton: {
@@ -74,7 +74,7 @@ const muiTheme = createTheme({
                     padding: theme.spacing(0.75),
                 }),
             },
-        }
+        },
     },
 });
 
@@ -86,7 +86,7 @@ root.render(
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={muiTheme}>
                 <Provider store={store}>
-                    <App />
+                    <App/>
                 </Provider>
             </ThemeProvider>
         </StyledEngineProvider>

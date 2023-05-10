@@ -53,7 +53,7 @@ export const LoadingIndicatorBig = (props: Props) => {
                             <Paper elevation={0}
                                 className={classes.loadingPaper}
                             >
-                                <ErrorRounded />
+                                <ErrorRounded/>
 
                                 <Typography>{loading.info}</Typography>
 
@@ -73,7 +73,7 @@ export const LoadingIndicatorBig = (props: Props) => {
                                 width='100%'
                                 height='100%'
                             >
-                                <CircularProgress />
+                                <CircularProgress/>
                             </Box>
                         )
                     : children

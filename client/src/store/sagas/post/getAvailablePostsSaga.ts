@@ -3,10 +3,16 @@ import {
     put,
     takeLatest,
 } from 'redux-saga/effects';
-import { ActionType, getType } from 'typesafe-actions';
+import {
+    ActionType,
+    getType,
+} from 'typesafe-actions';
 import { getAvailablePostsApi } from '../../../api/posts/getAvailablePostsApi';
 import { Post } from '../../../types/post/Post';
-import { getAvailablePostsAction, setPostQueriesAction } from '../../actions/post';
+import {
+    getAvailablePostsAction,
+    setPostQueriesAction,
+} from '../../actions/post';
 
 interface Response {
     posts: Post[];

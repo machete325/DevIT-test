@@ -93,7 +93,7 @@ export const AccountMenu = (props: Props) => {
                         item
                         xs={3}
                     >
-                        <AccountCircle />
+                        <AccountCircle/>
                     </Grid>
 
                     <Grid
@@ -111,10 +111,10 @@ export const AccountMenu = (props: Props) => {
                         onClick={handleLogout}
                     >
                         <ListItemIcon>
-                            <LogoutIcon />
+                            <LogoutIcon/>
                         </ListItemIcon>
 
-                        <ListItemText primary='Logout' />
+                        <ListItemText primary='Logout'/>
                     </ListItemButton>
                 </List>
             </Menu>

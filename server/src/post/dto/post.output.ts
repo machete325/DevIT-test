@@ -21,4 +21,3 @@ export class PostOutput {
   pubDate: Date;
 }
 
-

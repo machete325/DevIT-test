@@ -13,22 +13,21 @@ import { sagaMiddleware } from './store';
 import { PostsPage } from './pages/posts/PostsPage';
 import { Root } from './pages/Root';
 
-
 const router = createBrowserRouter([
     {
         path: '/login',
-        element: <LoginPage />,
+        element: <LoginPage/>,
     },
     {
         path: '/',
-        element: <Root />,
+        element: <Root/>,
         errorElement: <div>Incorrect page</div>,
         children: [
             {
                 path: '/posts',
-                element: <PostsPage />,
+                element: <PostsPage/>,
             },
-        ]
+        ],
     },
 ]);
 
@@ -39,7 +38,7 @@ sagaMiddleware.setContext({
 export const App = () => {
     return (
         <React.Fragment>
-            <RouterProvider router={router} />
+            <RouterProvider router={router}/>
 
             <ToastContainer
                 transition={Slide}

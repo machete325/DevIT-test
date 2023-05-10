@@ -71,6 +71,6 @@ export const PostListReducer = createReducer<PostListState, Actions>(
     .handleAction(actions.setPostQueriesAction, (state, action) => {
         return {
             ...state,
-            queries: action.payload
+            queries: action.payload,
         };
     });

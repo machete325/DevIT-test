@@ -72,8 +72,7 @@ interface Props {
 export const PostCard = (props: Props) => {
     const { classes } = useStyles();
     const dispatch = useDispatch();
-    const {
-        id,
+    const { id,
         title,
         creator,
         link,
@@ -130,7 +129,7 @@ export const PostCard = (props: Props) => {
                             <IconButton onClick={handleMenuOpen}
                                 aria-label='settings'
                             >
-                                <MoreVertIcon />
+                                <MoreVertIcon/>
                             </IconButton>
 
                             <DropdownMenu
@@ -148,8 +147,13 @@ export const PostCard = (props: Props) => {
             </Box>
 
             <CardContent>
-                <img className={classes.image} alt={title} src={imgSrc} />
-                <div className={classes.content} dangerouslySetInnerHTML={{ __html: content }}></div>
+                <img className={classes.image}
+                    alt={title}
+                    src={imgSrc}
+                />
+                <div className={classes.content}
+                    dangerouslySetInnerHTML={{ __html: content }}
+                />
             </CardContent>
 
             <CardActions
@@ -164,6 +168,6 @@ export const PostCard = (props: Props) => {
                     Go to
                 </Button>
             </CardActions>
-        </Card >
+        </Card>
     );
 };

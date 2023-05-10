@@ -5,9 +5,7 @@ import {
     Logger,
 } from '@nestjs/common';
 import { PostDto } from './dto/post.dto';
-import {
-    convertToPosts,
-} from './converter/to-post.converter';
+import { convertToPosts } from './converter/to-post.converter';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { Cron } from '@nestjs/schedule';
 import * as Parser from 'rss-parser';
@@ -49,8 +47,8 @@ export class PostService {
                             lte: endDate,
                         },
                     },
-                ]
-            } : null
+                ],
+            } : null;
 
             const posts = await this.prisma.posts.findMany({
                 where: {
@@ -58,17 +56,17 @@ export class PostService {
                         {
                             OR: [
                                 { title: { contains: search, mode: 'insensitive' } },
-                                { creator: { contains: search, mode: 'insensitive' } }
-                            ]
+                                { creator: { contains: search, mode: 'insensitive' } },
+                            ],
                         },
-                        filter
-                    ]
+                        filter,
+                    ],
                 },
                 orderBy: {
                     [SortType[sort] || 'pubDate']: OrderDirection[order] || 'desc',
                 },
-                take: take,
-                skip: skip,
+                take,
+                skip,
             });
 
             const allPosts = await this.prisma.posts.findMany({
@@ -77,11 +75,11 @@ export class PostService {
                         {
                             OR: [
                                 { title: { contains: search, mode: 'insensitive' } },
-                                { creator: { contains: search, mode: 'insensitive' } }
-                            ]
+                                { creator: { contains: search, mode: 'insensitive' } },
+                            ],
                         },
-                        filter
-                    ]
+                        filter,
+                    ],
                 },
             });
 
@@ -177,12 +175,10 @@ export class PostService {
                     contentSnippet,
                     categories,
                     pubDate: new Date(pubDate),
-                }
-
-
+                };
 
                 if (!isExist) {
-                    await this.createPost(data)
+                    await this.createPost(data);
                 }
             }
 
@@ -194,7 +190,7 @@ export class PostService {
     @Cron('0 0 * * * *') // Launch cron every hour
     handleCron() {
         this.logger.debug('Parsing posts...');
-        this.parsingPosts()
+        this.parsingPosts();
     }
 
 }

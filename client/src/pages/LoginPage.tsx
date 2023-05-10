@@ -10,7 +10,10 @@ import { LinkedForm } from '../common/form/LinkedForm';
 import { LoginInputSchema } from '../schemas/AuthSchemas';
 import { LinkedTextField } from '../common/form/LinkedTextField';
 import { LoginInput } from '../types/authTypes';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+    useDispatch,
+    useSelector,
+} from 'react-redux';
 import { loginAction } from '../store/actions';
 import { makeStyles } from 'tss-react/mui';
 import { loginSelector } from '../store/selectors/auth/loginSelector';
@@ -79,7 +82,7 @@ export const LoginPage = () => {
                         height={45}
                     >
                         {inProgress(loading)
-                            ? <CircularProgress />
+                            ? <CircularProgress/>
                             : (
                                 <Button
                                     type='submit'

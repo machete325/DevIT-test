@@ -1,4 +1,4 @@
 export enum SortType {
-  creator = 'creator',
-  pubDate = 'pubDate',
+    creator = 'creator',
+    pubDate = 'pubDate',
 }

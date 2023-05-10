@@ -14,8 +14,6 @@ import { UserOutput } from 'src/users/dto/user.output';
 @ApiTags('Users')
 @Controller('api/v1/public/users')
 export class UserController {
-    constructor() { }
-
     @Get('/me')
     @UseGuards(JwtAuthGuard)
     @ApiBearerAuth()
