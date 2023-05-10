@@ -1,0 +1,37 @@
+{
+    "name": "task-devit",
+    "version": "0.0.1",
+    "description": "",
+    "author": "machete325",
+    "private": true,
+    "homepage": "/",
+    "license": "UNLICENSED",
+    "engines": {
+        "node": "16.x"
+    },
+    "cacheDirectories": [
+        "node_modules",
+        "client/node_modules",
+        "server/node_modules"
+    ],
+    "scripts": {
+        "install": "npm run install:client && npm run install:server",
+        "install:client": "cd ./client && npm install",
+        "install:server": "cd ./server && npm install",
+        "lint": "eslint \"{client/src,server/src}/**/*\" --ext .ts,.tsx",
+        "build": "npm run build:client && npm run build:server",
+        "build:client": "cd ./client && npm run build",
+        "build:server": "cd ./server && npm run build",
+        "init:db": "npm run docker:db && npm run start:db",
+        "start:server:dev": "cd ./server && npx prisma migrate deploy && npm run start:dev",
+        "start:client:dev": "cd ./client && npm start",
+        "start": "cd ./server && npx prisma migrate deploy && npm run start:prod"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "5.54.0",
+        "@typescript-eslint/parser": "5.54.0",
+        "eslint-plugin-modules-newlines": "0.0.7",
+        "eslint-plugin-react": "7.32.2",
+        "eslint-plugin-react-hooks": "4.6.0"
+    }
+}

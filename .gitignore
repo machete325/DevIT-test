@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+server/node_modules/
+server/dist/
+server/prisma/*.db
+server/coverage/
+
+.DS_Store
+
+server/prisma/migrations/dev/
+server/.env
+
+client/node_modules/
+client/build/
